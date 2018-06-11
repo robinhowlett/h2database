@@ -74,35 +74,8 @@ public class WebServer implements Service {
     private static final String DEFAULT_LANGUAGE = "en";
 
     private static final String[] GENERIC = {
-        "Generic JNDI Data Source|javax.naming.InitialContext|" +
-                "java:comp/env/jdbc/Test|sa",
-        "Generic Firebird Server|org.firebirdsql.jdbc.FBDriver|" +
-                "jdbc:firebirdsql:localhost:c:/temp/firebird/test|sysdba",
-        "Generic SQLite|org.sqlite.JDBC|" +
-                "jdbc:sqlite:test|sa",
-        "Generic DB2|com.ibm.db2.jcc.DB2Driver|" +
-                "jdbc:db2://localhost/test|" ,
-        "Generic Oracle|oracle.jdbc.driver.OracleDriver|" +
-                    "jdbc:oracle:thin:@localhost:1521:XE|sa" ,
-        "Generic MS SQL Server 2000|com.microsoft.jdbc.sqlserver.SQLServerDriver|" +
-                "jdbc:microsoft:sqlserver://localhost:1433;DatabaseName=sqlexpress|sa",
-        "Generic MS SQL Server 2005|com.microsoft.sqlserver.jdbc.SQLServerDriver|" +
-                "jdbc:sqlserver://localhost;DatabaseName=test|sa",
-        "Generic PostgreSQL|org.postgresql.Driver|" +
-                "jdbc:postgresql:test|" ,
-        "Generic MySQL|com.mysql.jdbc.Driver|" +
-                "jdbc:mysql://localhost:3306/test|" ,
-        "Generic HSQLDB|org.hsqldb.jdbcDriver|" +
-                "jdbc:hsqldb:test;hsqldb.default_table_type=cached|sa" ,
-        "Generic Derby (Server)|org.apache.derby.jdbc.ClientDriver|" +
-                "jdbc:derby://localhost:1527/test;create=true|sa",
-        "Generic Derby (Embedded)|org.apache.derby.jdbc.EmbeddedDriver|" +
-                "jdbc:derby:test;create=true|sa",
-        "Generic H2 (Server)|org.h2.Driver|" +
-                "jdbc:h2:tcp://localhost/~/test|sa",
-        // this will be listed on top for new installations
-        "Generic H2 (Embedded)|org.h2.Driver|" +
-                "jdbc:h2:~/test|sa",
+        "Handycapper DB (Local)|org.h2.Driver|" +
+                "jdbc:h2:~/handycapper/db|sa",
     };
 
     private static int ticker;

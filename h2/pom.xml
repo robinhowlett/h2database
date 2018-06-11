@@ -2,13 +2,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.h2database</groupId>
+  <groupId>com.robinhowlett</groupId>
   <artifactId>h2</artifactId>
-  <version>1.4.195-SNAPSHOT</version>
+  <version>1.4.196.FORK</version>
   <packaging>jar</packaging>
   <name>H2 Database Engine</name>
   <url>http://www.h2database.com</url>
-  <description>H2 Database Engine</description>
+  <description>H2 Database Engine with simplications for Handycapper</description>
 
   <licenses>
     <license>
@@ -19,17 +19,30 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:https://github.com/h2database/h2database</connection>
-    <url>https://github.com/h2database/h2database</url>
+    <connection>scm:git:https://github.com/robinhowlett/h2database</connection>
+    <url>https://github.com/robinhowlett/h2database</url>
   </scm>
 
   <developers>
+    <developer>
+      <id>robinhowlett</id>
+      <name>Robin Howlett</name>
+      <email>robin.howlett@gmail.com</email>
+      <url>http://robinhowlett.com</url>
+    </developer>
     <developer>
       <id>thomas.tom.mueller</id>
       <name>Thomas Mueller</name>
       <email>thomas.tom.mueller at gmail dot com</email>
     </developer>
   </developers>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -266,7 +279,17 @@
           </includes>
         </configuration>
       </plugin>
-
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.8</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
